@@ -1,0 +1,8 @@
+# Project exclude paths
+/2022-interview-questions/target/
+/nowcoder-coding/target/
+/shardingsphere-springboot-demo/target/
+/springboot-demo/springboot-nacos-use/target/
+/SpringSecurityPractice/SpringSecurityDemoFive/target/
+/Test-Add-Use-DIY-Springstarter/HelloDemo/target/
+/xxl-job-executor-springbott-demo/target/
