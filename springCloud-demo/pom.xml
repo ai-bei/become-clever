@@ -10,7 +10,10 @@
     <packaging>pom</packaging>
     <name>springCloud-demo</name>
     <url>http://maven.apache.org</url>
-
+    <modules>
+        <module>nacos-spring-cloud-config-multi-data-ids-example</module>
+        <module>nacos-spring-cloud-discovery-example</module>
+    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
