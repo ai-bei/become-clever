@@ -20,6 +20,7 @@
     <modules>
         <module>springboot-nacos-use</module>
         <module>springboot-nacos-provider</module>
+        <module>springboot-aop</module>
     </modules>
 
 </project>

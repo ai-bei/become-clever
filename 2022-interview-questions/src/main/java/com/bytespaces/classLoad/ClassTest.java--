@@ -1,0 +1,14 @@
+package com.bytespaces.classLoad.demoClass;
+
+
+public class ClassTest implements InterfaceTest{
+    @Override
+    public void name() {
+        System.out.println("tao");
+    }
+
+    @Override
+    public void age() {
+        System.out.println("21");
+    }
+}
