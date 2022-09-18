@@ -21,6 +21,7 @@
         <module>springboot-nacos-use</module>
         <module>springboot-nacos-provider</module>
         <module>springboot-aop</module>
+        <module>springboot-mybatisplus-demo</module>
     </modules>
 
 </project>
