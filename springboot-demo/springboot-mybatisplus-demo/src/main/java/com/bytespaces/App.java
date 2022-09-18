@@ -1,4 +1,4 @@
-package com.wstro;
+package com.bytespaces;
 
 import org.springframework.boot.Banner.Mode;
 import org.springframework.boot.SpringApplication;
