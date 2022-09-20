@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>XX管理系统</title>
-    [#include "/admin/header.ftl"]
+    [#include "${rc.contextPath}/admin/header.ftl"]
     <!-- iCheck -->
     <script src="${rc.contextPath}/statics/common/icheck/icheck.min.js"></script>
     <!-- bootstrapvalidator-master前端验证框架 -->

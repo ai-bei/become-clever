@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>个人信息</title>
-    [#include "/admin/header.ftl"]
+    [#include "${rc.contextPath}/admin/header.ftl"]
     <link rel="stylesheet" href="${rc.contextPath}/statics/common/bootstrap-table/bootstrap-table.min.css"/>
     <link rel="stylesheet" href="${rc.contextPath}/statics/common/icheck/flat/green.css"/>
 </head>
@@ -197,9 +197,9 @@
 <script src="${rc.contextPath}/statics/js/admin/sys/adminUserInfo.js"></script>
 [#-- 自定义搜索框placeholder --]
 [#assign searchText="登录IP"]
-[#include "/admin/bootstrapcommon.ftl"]
+[#include "${rc.contextPath}/admin/bootstrapcommon.ftl"]
 [#-- 页面加载进度条 --]
 [#assign parentName="#row"][#-- 默认为Body --]
-[#include "/admin/nprogress.ftl"]
+[#include "${rc.contextPath}/admin/nprogress.ftl"]
 </body>
 </html>

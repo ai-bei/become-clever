@@ -1003,5 +1003,5 @@
 </body>
 [#-- 页面加载进度条 --]
 [#assign parentName="#row"][#-- 默认为Body --]
-[#include "/admin/nprogress.ftl"]
+[#include "${rc.contextPath}/admin/nprogress.ftl"]
 </html>

@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>上传头像</title>
-    [#include "/admin/header.ftl"]
+    [#include "${rc.contextPath}/admin/header.ftl"]
     <link href="${rc.contextPath}/statics/common/bootstrap-fileinput/css/fileinput.css" media="all" rel="stylesheet"
           type="text/css">
     <link href="${rc.contextPath}/statics/common/bootstrap-fileinput/themes/explorer/theme.css" media="all" rel="stylesheet"
@@ -205,5 +205,5 @@
 </script>
 [#-- 页面加载进度条 --]
 [#assign parentName="#row"][#-- 默认为Body --]
-[#include "/admin/nprogress.ftl"]
+[#include "${rc.contextPath}/admin/nprogress.ftl"]
 </html>

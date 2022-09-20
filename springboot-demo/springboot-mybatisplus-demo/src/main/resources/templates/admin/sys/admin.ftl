@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>管理员管理</title>
-    [#include "/admin/header.ftl"]
+    [#include "${rc.contextPath}/admin/header.ftl"]
     <link rel="stylesheet" href="${rc.contextPath}/statics/common/bootstrap-table/bootstrap-table.min.css"/>
     <link rel="stylesheet" href="${rc.contextPath}/statics/common/icheck/flat/green.css"/>
     <link rel="stylesheet" href="${rc.contextPath}/statics/common/bootstrap-switch/css/bootstrap-switch.min.css"/>
@@ -238,13 +238,13 @@
 [#-- 邮箱自动补全 --]
 [#assign inputEmail="input[name='email']"][#-- INPUT元素--]
 [#assign form="#form"]
-[#include "/admin/autoEmail.ftl"]
+[#include "${rc.contextPath}/admin/autoEmail.ftl"]
 [#-- 页面加载进度条 --]
 [#assign parentName="#row"][#-- 默认为Body --]
-[#include "/admin/nprogress.ftl"]
+[#include "${rc.contextPath}/admin/nprogress.ftl"]
 [#-- 页面加载进度条 --]
 [#assign parentName="#form"]
 [#assign isFirst=true][#-- 默认为Body --]
-[#include "/admin/nprogress.ftl"]
+[#include "${rc.contextPath}/admin/nprogress.ftl"]
 </body>
 </html>

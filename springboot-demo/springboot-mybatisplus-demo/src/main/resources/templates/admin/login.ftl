@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>XX管理系统</title>
-    [#include "/admin/header.ftl"]
+    [#include "${rc.contextPath}/admin/header.ftl"]
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
     <link rel="stylesheet" href="${rc.contextPath}/statics/css/admin/AdminLTE.min.css"/>

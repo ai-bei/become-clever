@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>角色管理</title>
-    [#include "/admin/header.ftl"]
+    [#include "${rc.contextPath}/admin/header.ftl"]
     <link rel="stylesheet" href="${rc.contextPath}/statics/common/bootstrap-table/bootstrap-table.min.css"/>
 </head>
 <body class="gray-bg" style="display:none;">
@@ -150,9 +150,9 @@
 <script src="${rc.contextPath}/statics/js/admin/sys/role.js"></script>
 [#-- 自定义搜索框placeholder --]
 [#assign searchText="角色名称"]
-[#include "/admin/bootstrapcommon.ftl"]
+[#include "${rc.contextPath}/admin/bootstrapcommon.ftl"]
 [#-- 页面加载进度条 --]
 [#assign parentName="#row"][#-- 默认为Body --]
-[#include "/admin/nprogress.ftl"]
+[#include "${rc.contextPath}/admin/nprogress.ftl"]
 </body>
 </html>
