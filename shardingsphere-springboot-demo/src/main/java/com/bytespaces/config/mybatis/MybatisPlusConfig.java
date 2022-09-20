@@ -1,10 +1,9 @@
-package com.bytespaces.config;
+package com.bytespaces.config.mybatis;
 
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@MapperScan("com.bytespaces.system.mapper")
 public class MybatisPlusConfig {
 }

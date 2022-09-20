@@ -22,7 +22,7 @@ public class MyUserServiceImpl implements MyUserService {
     }
 
     @Override
-    public List<MyUser> getUserList() {
+    public List<MyUser> getUserList(MyUser user) {
         QueryWrapper<MyUser> queryWrapper = new QueryWrapper<>();
         queryWrapper.select("*");
         return myUserMapper.selectList(queryWrapper);

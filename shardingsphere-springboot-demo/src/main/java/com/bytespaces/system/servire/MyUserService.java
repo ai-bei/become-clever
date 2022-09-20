@@ -17,7 +17,7 @@ public interface MyUserService {
      * 查询所以用户信息
      * @return
      */
-    List<MyUser> getUserList();
+    List<MyUser> getUserList(MyUser user);
 
     /**
      *

@@ -16,12 +16,12 @@ public class MyUserController {
     private MyUserService myUserService;
 
     @GetMapping("/select")
-    public List<MyUser> select() {
-        return myUserService.getUserList();
+    public List<MyUser> select(@RequestBody MyUser user) {
+        return myUserService.getUserList(user);
     }
 
     @PostMapping("/insert")
-    public int insert(MyUser user) {
+    public int insert(@RequestBody MyUser user) {
         return myUserService.save(user);
     }
 
