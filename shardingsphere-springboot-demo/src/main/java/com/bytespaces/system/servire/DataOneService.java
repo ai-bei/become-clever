@@ -1,5 +1,6 @@
 package com.bytespaces.system.servire;
 
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.bytespaces.system.entity.DataOne;
 import com.bytespaces.system.pojo.vo.BaseParams;
 
@@ -15,14 +16,15 @@ import java.util.List;
  * <author>      <time>          <version>          <desc>
  * 作者姓名       修改时间         版本号             描述
  */
-public interface DataOneService {
+public interface DataOneService extends IService<DataOne> {
     /**
      * 保存用户信息
      * @param entity
      * @return
      */
-
-    int save(DataOne entity);
+//
+//    @Override
+//    int save(DataOne entity);
 
     /**
      * 查询所以用户信息
@@ -36,6 +38,14 @@ public interface DataOneService {
      * @return
      */
     List<DataOne> queryList(BaseParams baseParams);
+
+//    /**
+//     * saveOrUpdate
+//     * @param one
+//     * @return
+//     */
+//    @Override
+//    int saveOrUpdate(DataOne one);
 
     /**
      *

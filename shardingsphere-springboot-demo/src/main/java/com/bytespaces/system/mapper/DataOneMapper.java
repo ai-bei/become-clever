@@ -2,9 +2,9 @@ package com.bytespaces.system.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.bytespaces.system.entity.DataOne;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
-import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 
@@ -18,8 +18,8 @@ import java.util.List;
  * <author>      <time>          <version>          <desc>
  * 作者姓名       修改时间         版本号             描述
  */
-@Resource
-public interface DataOneMapper extends BaseMapper<DataOne> {
+@Mapper
+public interface DataOneMapper  extends BaseMapper<DataOne> {
 
     List<DataOne> queryList(@Param("startDate") Date startDate , @Param("endDate") Date endDate);
 }

@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * Copyright (C), 2010-2022,
  * FileName:     DateOneController
@@ -36,4 +38,15 @@ public class DataOneController {
     public AjaxResult queryList(@RequestBody BaseParams baseParams) {
         return AjaxResult.success(dataOneService.queryList(baseParams));
     }
+
+    @PostMapping("/saveOrUpdate")
+    public AjaxResult saveOrUpdate(@RequestBody DataOne one) {
+        return AjaxResult.success(dataOneService.saveOrUpdate(one));
+    }
+
+    @PostMapping("/saveOrUpdateBatch")
+    public AjaxResult saveOrUpdateBatch(@RequestBody List<DataOne> list) {
+        return AjaxResult.success(dataOneService.saveOrUpdateBatch(list));
+    }
+
 }

@@ -4,8 +4,9 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bytespaces.system.mapper.DataOneMapper">
 
+    <!-- 不可以使用 select * 这样会导致查询的为空 -->
     <select id="queryList" resultType="com.bytespaces.system.entity.DataOne">
-        select * from dataone where create_date between #{startDate} and #{endDate}
+        select id,username,password,create_date from dataone where create_date between #{startDate} and #{endDate}
     </select>
 
 

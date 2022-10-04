@@ -2,6 +2,7 @@ package com.bytespaces.system.servire.impl;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.bytespaces.system.entity.DataOne;
 import com.bytespaces.system.mapper.DataOneMapper;
 import com.bytespaces.system.pojo.vo.BaseParams;
@@ -24,21 +25,18 @@ import java.util.List;
  * 作者姓名       修改时间         版本号             描述
  */
 @Service
-public class DataOneServiceImpl implements DataOneService {
+public class DataOneServiceImpl extends ServiceImpl<DataOneMapper, DataOne> implements DataOneService {
 
     @Autowired
     private DataOneMapper dataOneMapper;
 
-    @Override
-    public int save(DataOne entity) {
-        return dataOneMapper.insert(entity);
-    }
 
     @Override
     public List<DataOne> getUserList(DataOne one) {
         QueryWrapper<DataOne> queryWrapper = new QueryWrapper<>();
-        queryWrapper.select("*");
-        queryWrapper.between("create_date", DateUtil.strBeautyShort2Date("2022-08-01") ,DateUtil.strBeautyShort2Date("2022-10-01"));
+//        queryWrapper.select("*"); 使用 * 查询会导致查询的字段都是null
+        queryWrapper.select("id,username,password,create_date");
+        queryWrapper.between("create_date", DateUtil.strBeautyShort2Date("2022-08-01"),DateUtil.strBeautyShort2Date("2022-09-31"));
         return dataOneMapper.selectList(queryWrapper);
     }
 
@@ -49,11 +47,11 @@ public class DataOneServiceImpl implements DataOneService {
         return dataOneMapper.queryList(startDate,endDate);
     }
 
+
     @Override
     public DataOne selectById(Integer id) {
         return dataOneMapper.selectById(id);
     }
-
 
 
 }

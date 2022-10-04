@@ -42,7 +42,7 @@ spring:
       default-data-source-name: ds01
       tables:
         dataone:
-          actual-data-nodes: ds01.dataone
+          actual-data-nodes: ds01.dataone_$->{2022..2030}${(1..12).collect{t ->t.toString().padLeft(2,'0')}}
           table-strategy:
             standard:
               sharding-column: create_date
