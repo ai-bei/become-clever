@@ -9,13 +9,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@RestController
+@RestController()
+@RequestMapping("/myUser")
 public class MyUserController {
 
     @Autowired
     private MyUserService myUserService;
 
-    @GetMapping("/select")
+    @PostMapping("/select")
     public List<MyUser> select(@RequestBody MyUser user) {
         return myUserService.getUserList(user);
     }
@@ -26,7 +27,6 @@ public class MyUserController {
     }
 
     @GetMapping(value = "/getobj/{id}")
-    @ResponseBody
     public Map<String, Object> getStorage(@PathVariable("id") Integer id) {
         MyUser userInfo = myUserService.selectById(id);
         Map<String, Object> mapData = new HashMap<>(8);

@@ -30,7 +30,7 @@ public class DateOperationDayPreciseShardingAlgorithm implements PreciseSharding
         log.info("[表名<{}> 列名<{}> 分片值<{}>]", preciseShardingValue.getLogicTableName(), preciseShardingValue.getColumnName(),preciseShardingValue.getValue());
 
         String first = "";
-        String value = DateUtil.format(operationDay, "yyyyMMdd");
+        String value = DateUtil.format(operationDay, "yyyyMM");
         for (String physicsTable : collection) {
 //            分表后缀
             String suffix = physicsTable.replaceAll(".*\\D", ""); // 替换直到最后一个非数字为空

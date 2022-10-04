@@ -8,7 +8,7 @@ mybatis-plus:
 
 #设置为true，表示后发现的bean会覆盖之前相同名称的bean。
 shardingsphere:
-  fresh: '{"dataone":"dataone"}'
+  fresh: {"dataone":"dataone"}
 spring:
   main:
     allow-bean-definition-overriding: true
@@ -24,7 +24,7 @@ spring:
         driver-class-name: com.mysql.cj.jdbc.Driver
         test-whileidle: true
         type: com.alibaba.druid.pool.DruidDataSource
-        url: jdbc:mysql://localhost:3306/master_one?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowMultiQueries=true&serverTimezone=UTC
+        url: jdbc:mysql://localhost:3306/master_one?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowMultiQueries=true&serverTimezone=UTC
         username: root
         password: liu2020
         validation-query: select 1 from dual
@@ -34,16 +34,17 @@ spring:
         url: jdbc:mysql://localhost:3306/salve_one?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowMultiQueries=true&serverTimezone=UTC
         username: root
         password: liu2020
+        validation-query: select 1 from dual
     props:
       sql:
         show: true
     sharding:
       default-data-source-name: ds01
       tables:
-        t_user:
-          actual-data-nodes: ds01.t_user
+        dataone:
+          actual-data-nodes: ds01.dataone
           table-strategy:
             standard:
-              sharding-column: create_data
+              sharding-column: create_date
               precise-algorithm-class-name: com.bytespaces.config.sharedingsphere.DateOperationDayPreciseShardingAlgorithm
               range-algorithm-class-name: com.bytespaces.config.sharedingsphere.DateOperationDayRangeShardingAlgorithm

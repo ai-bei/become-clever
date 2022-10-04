@@ -34,9 +34,9 @@ public class DateOperationDayRangeShardingAlgorithm implements RangeShardingAlgo
         Date operationDayB = valueRange.upperEndpoint();
 
 //        下限
-        int lowerCase = operationDayA == null ? 0 : Integer.parseInt(DateUtil.format(operationDayA,"yyyyMMdd"));
+        int lowerCase = operationDayA == null ? 0 : Integer.parseInt(DateUtil.format(operationDayA,"yyyyMM"));
 //        上限
-        int upperCase = operationDayB == null ? 99999999 : Integer.parseInt(DateUtil.format(operationDayB,"yyyyMMdd"));
+        int upperCase = operationDayB == null ? 99999999 : Integer.parseInt(DateUtil.format(operationDayB,"yyyyMM"));
         List<String> findTable = new ArrayList<>(collection.size());
         String first = "";
         for (String physicsTable : collection) {
