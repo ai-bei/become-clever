@@ -6,9 +6,10 @@ mybatis-plus:
   mapper-locations: classpath:/mapper/*Mapper.xml
   type-aliases-package: com.bytespaces.system.entity
 
+#动态刷新数据源表配置定时任务 每天凌晨4:20
+freshTableCron: "0 20 4 * * *"
 #设置为true，表示后发现的bean会覆盖之前相同名称的bean。
-shardingsphere:
-  fresh: {"dataone":"dataone"}
+sharding-sphere-fresh: '{"dataone":"dataone"}'
 spring:
   main:
     allow-bean-definition-overriding: true
@@ -42,7 +43,8 @@ spring:
       default-data-source-name: ds01
       tables:
         dataone:
-          actual-data-nodes: ds01.dataone_$->{2022..2030}${(1..12).collect{t ->t.toString().padLeft(2,'0')}}
+#          actual-data-nodes: ds01.dataone_$->{2022..2030}${(1..12).collect{t ->t.toString().padLeft(2,'0')}}
+          actual-data-nodes: ds01.dataone
           table-strategy:
             standard:
               sharding-column: create_date
