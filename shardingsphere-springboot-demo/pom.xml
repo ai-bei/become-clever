@@ -78,9 +78,18 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
+            <!-- 3.3.2+ 都不支持 多个@TableId -->
             <version>3.5.1</version>
+            <!--  mybatis plus 3.3.1 支持多个@TableId , 但是使用 saveOrUpdate 会失效，不会先更加TableId查询记录是否存在，导致记录都会写入数据库中   -->
+<!--            <version>3.3.1</version>-->
         </dependency>
 
+
+        <dependency>
+            <groupId>com.github.jeffreyning</groupId>
+            <artifactId>mybatisplus-plus</artifactId>
+            <version>1.5.1-RELEASE</version>
+        </dependency>
 
 
 
