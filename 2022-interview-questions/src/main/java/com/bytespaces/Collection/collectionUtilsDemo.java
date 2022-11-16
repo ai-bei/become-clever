@@ -1,12 +1,11 @@
 package com.bytespaces.Collection;
 
 import cn.hutool.core.collection.CollectionUtil;
-import org.junit.platform.commons.util.CollectionUtils;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
+
+import static java.util.stream.Collectors.collectingAndThen;
+import static java.util.stream.Collectors.toCollection;
 
 /**
  * Copyright (C), 2010-2022,
@@ -33,6 +32,9 @@ public class collectionUtilsDemo {
         // 生成10000条数据
         for (int i = 5; i < 20; i++) {
             orderEntity order = new orderEntity(String.valueOf(i),UUID.randomUUID().toString(),i);
+            if( i > 10){
+                order.setName("AAAA");
+            }
             listArryB.add(order);
         }
 
@@ -44,7 +46,17 @@ public class collectionUtilsDemo {
         Collection<orderEntity> intersection = CollectionUtil.intersection(listArryA, listArryB);
 
 
+        // 集合去重
+        List<orderEntity> lt1 = listArryB.stream().collect(
+                collectingAndThen(
+                        toCollection(() -> new TreeSet<>(Comparator.comparing(orderEntity::getName))), ArrayList::new));
+
+
         System.out.println();
+
+
+
+
 
     }
 }
