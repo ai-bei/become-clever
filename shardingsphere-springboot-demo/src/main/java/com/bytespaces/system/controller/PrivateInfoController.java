@@ -32,6 +32,7 @@ public class PrivateInfoController {
 
     @PostMapping(value = "/saveOrUpdate")
     public AjaxResult saveOrUpdate(@RequestBody PrivateInfo privateInfo) {
+        /*添加 updateWrapper 执行 saveOrUpdate 会直接执行更新的操作 */
         UpdateWrapper<PrivateInfo> objectUpdateWrapper = new UpdateWrapper<PrivateInfo>()
                 .eq("union_key",privateInfo.getUnionKey());
         return AjaxResult.success(service.saveOrUpdate(privateInfo,objectUpdateWrapper));

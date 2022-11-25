@@ -36,7 +36,7 @@ public class DataOneServiceImpl extends ServiceImpl<DataOneMapper, DataOne> impl
         QueryWrapper<DataOne> queryWrapper = new QueryWrapper<>();
 //        queryWrapper.select("*"); 使用 * 查询会导致查询的字段都是null
         queryWrapper.select("id,username,password,create_date");
-        queryWrapper.between("create_date", DateUtil.strBeautyShort2Date("2022-08-01"),DateUtil.strBeautyShort2Date("2022-09-31"));
+        queryWrapper.between("create_date", one.getCreateDate(),one.getCreateDate());
         return dataOneMapper.selectList(queryWrapper);
     }
 

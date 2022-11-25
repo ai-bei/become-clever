@@ -5,7 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * Copyright (C), 2010-2022, 广州广电运通智能科技有限公司
+ * Copyright (C), 2010-2022,
  * FileName:     baseParams
  * Author:       shine
  * Date:         2022/10/4 14:40
