@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * 主线程类，主线程模拟发送请求，开启额外线程模拟获取响应结果，
  * 并异步把响应结果返回给主线程
- * @author 夜行侠
+ * @author shine
  */
 public class FutureMain {
     public static void main(String[] args) {

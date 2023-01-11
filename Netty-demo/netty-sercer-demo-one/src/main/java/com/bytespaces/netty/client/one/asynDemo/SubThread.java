@@ -2,7 +2,7 @@ package com.bytespaces.netty.client.one.asynDemo;
 
 /**
  * 子线程，此线程模拟netty的异步结果响应
- * @author 夜行侠
+ * @author shine
  */
 public class SubThread  extends Thread{
     private RequestFuture request;
