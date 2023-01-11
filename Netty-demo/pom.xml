@@ -1,0 +1,35 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>become-clever</artifactId>
+        <groupId>com.bytespaces</groupId>
+        <version>1.0.0.20220501</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>Netty-demo</artifactId>
+    <packaging>pom</packaging>
+    <name>Netty-demo Maven </name>
+    <url>http://maven.apache.org</url>
+    <modules>
+        <module>netty-sercer-demo-one</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <netty-version>4.1.86.Final</netty-version>
+    </properties>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty-version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
