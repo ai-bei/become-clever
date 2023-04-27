@@ -8,7 +8,7 @@ import java.security.Signature;
 import java.security.spec.PKCS8EncodedKeySpec;
 
 /**
- * Copyright (C), 2010-2022, 广州广电运通智能科技有限公司
+ * Copyright (C), 2010-2022,
  * FileName:     SignDemoOne
  * Author:       shine
  * Date:         2023/4/24 15:36
