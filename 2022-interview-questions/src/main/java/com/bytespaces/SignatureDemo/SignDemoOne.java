@@ -1,11 +1,14 @@
 package com.bytespaces.SignatureDemo;
 
 import cn.hutool.core.codec.Base64;
+import org.apache.commons.lang3.exception.ExceptionUtils;
 
 import java.security.KeyFactory;
 import java.security.PrivateKey;
+import java.security.PublicKey;
 import java.security.Signature;
 import java.security.spec.PKCS8EncodedKeySpec;
+import java.security.spec.X509EncodedKeySpec;
 
 /**
  * Copyright (C), 2010-2022,
@@ -51,6 +54,30 @@ public class SignDemoOne {
             System.out.println("加签异常");
         }
         return null;
+    }
+
+    /**
+     * 验签
+     *
+     * @param content
+     * @param sign
+     * @param public_key
+     * @return
+     */
+    public static boolean verify(String content, String sign, String public_key) {
+        try {
+            KeyFactory keyFactory = KeyFactory.getInstance(SIGN_TYPE_RSA);
+            byte[] encodedKey = Base64.decode(public_key);
+            PublicKey pubKey = keyFactory.generatePublic(new X509EncodedKeySpec(encodedKey));
+            Signature signature = Signature.getInstance(SIGN_ALGORITHMS);
+            signature.initVerify(pubKey);
+            signature.update(content.getBytes(CHARSETTING));
+            boolean bverify = signature.verify(Base64.decode(sign));
+            return bverify;
+        } catch (Exception e) {
+            System.out.println("验签异常:{}" + ExceptionUtils.getStackTrace(e));
+        }
+        return false;
     }
 
 
